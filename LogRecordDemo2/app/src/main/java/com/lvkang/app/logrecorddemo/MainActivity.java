@@ -1,5 +1,6 @@
 package com.lvkang.app.logrecorddemo;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -8,8 +9,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+
+import log.KLog;
 
 public class MainActivity extends AppCompatActivity {
+
+    private Button btCreateCrash;
+    private Button btStartCrash;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,7 +24,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        btCreateCrash = (Button) findViewById(R.id.btCreateCrash);
+        btStartCrash = (Button) findViewById(R.id.btStartCrash);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -26,6 +34,31 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+        btCreateCrash.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int[] i = new int[5];
+                int j = i[7];
+
+            }
+        });
+
+        btStartCrash.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Intent intent = new Intent(MyApplication.getInstance(), ActCrash.class);
+//                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//                MyApplication.getInstance().startActivity(intent);
+
+
+                for (int i=10000;i>0;i--)
+                {
+                    KLog.i("------"+i+"------");
+                }
+
+            }
+        });
+        KLog.e();
     }
 
     @Override

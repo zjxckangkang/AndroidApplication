@@ -16,4 +16,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!" />
+
+    <Button
+        android:id="@+id/btCreateCrash"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:text="CreateCrash"
+        android:layout_height="wrap_content" />
+
+
+    <Button
+        android:id="@+id/btStartCrash"
+        android:layout_below="@+id/btCreateCrash"
+        android:layout_width="wrap_content"
+        android:text="StartActCrash"
+        android:layout_height="wrap_content" />
 </RelativeLayout>
