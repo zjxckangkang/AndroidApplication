@@ -13,7 +13,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
         //类没有实例化,是不能用作父类构造器的参数,必须声明为静态
 
-        private static final String name = "count"; //数据库名称
+        private static final String name = "DeviceBelong"; //数据库名称
 
         private static final int version = 1; //数据库版本
 
@@ -28,7 +28,7 @@ public class DBHelper extends SQLiteOpenHelper {
         @Override
         public void onCreate(SQLiteDatabase db) {
 
-            db.execSQL("CREATE TABLE IF NOT EXISTS person (personid integer primary key autoincrement, name varchar(20), age INTEGER)");
+            db.execSQL("CREATE TABLE IF NOT EXISTS DeviceBelong (deviceId integer primary key autoincrement, sn varchar(40), location varchar(40), owner varchar(10))");
 
         }
 
